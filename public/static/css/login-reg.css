@@ -21,6 +21,7 @@ body, div, p, h2, li, button {
     text-align: center;
     font-size: 18px;
     color: #868687;
+    margin-bottom: 20px;
 }
 #loginReg .tab {
     text-align: center;
