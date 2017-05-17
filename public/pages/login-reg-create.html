@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title>伊美生活-登录</title>
+<link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../static/css/login-reg.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="loginReg">
+        <div class="logo"><img src="../static/img/logo.jpg" alt="伊美生活"></div>
+        <h2>伊美生活</h2>
+        <ul class="tab">
+            <!-- <li><span>注册</span></li>
+            <li class="active"><span>登录</span></li> -->
+        </ul>
+        <div class="form-box reg">
+            <ul>
+                <li><input placeholder="姓名"></li>
+                <li><input placeholder="手机号（仅支持中国大陆）"></li>
+                <li><input placeholder="密码（不少于6位）"></li>
+            </ul>
+            <button type="button" class="reg-btn">注册</button>
+        </div>
+        <div class="form-box login">
+            <ul>
+                <li><input placeholder="手机号" class="tel" value=""></li>
+                <li><input placeholder="密码" type="password" class="pwd" value=""></li>
+            </ul>
+            <button type="button" class="login-btn">登录</button>
+        </div>
+    </div>
+
+<!-- javascript -->
+<script src="../lib/require.2.1.15.min.js"></script>
+<script src="../static/js/config.js"></script>
+<script type="text/javascript">
+    require(['jquery'],function(){
+        /*$('.tab li').each(function(index){
+            $(this).on('click', function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+                $('.form-box').eq(index).show().siblings('.form-box').hide();
+            });
+        });*/
+
+        var user = [{
+            name: '马文斌',
+            phone: '18032161155',
+            pwd: 'mwb112233'
+        }, {
+            name: '郭建峰',
+            phone: '18832120502',
+            pwd: 'gjf123123'
+        }];
+
+        $('.login-btn').on('click', function(){
+            var tel = $('.tel').val();
+            var pwd = $('.pwd').val();
+            if (tel === '') {
+                alert('手机号不能为空');
+                return false;
+            }
+            if (pwd === '') {
+                alert('密码不能为空');
+                return false;
+            }
+
+            if (!hasPhone(tel)) {
+                alert('手机号不存在');
+                return false;
+            } else if (!logSuccess(tel, pwd)) {
+                alert('密码错误');
+                return false;
+            } else {
+                window.location.href = "http://www.jsform.com/web/formview/58fb0e0ce7aea93af3caddc5";
+            }
+        });
+
+        function hasPhone(tel) {
+            for (var i = 0; i < user.length; i++) {
+                if (user[i].phone === tel) {
+                    return true;
+                }
+            }
+        }
+
+        function logSuccess(tel, pwd) {
+            for (var i = 0; i < user.length; i++) {
+                if (user[i].phone === tel && user[i].pwd === pwd ) {
+                    return true;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

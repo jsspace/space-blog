@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, acronym, address, cite, code, del, dfn, img, ins, kbd, q, s, samp, strike, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{ margin:0; padding:0; border:0; outline:0; font:12px/1.6 Verdana, Geneva, sans-serif; -webkit-text-size-adjust:none; font-weight:inherit; color:#999;}
+p, span, big, small{ font:inherit;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+input {
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
+}
+:focus, a:focus, input[type=button] ,input[type=submit], a:active{ outline:0; -moz-outline-style:none;}
+::-moz-focus-inner{ outline:0; border-color:transparent;}
+a, a:visited{ color:#999; text-decoration:none;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+a:active{ color:#F00;}
+a:hover{ text-decoration:underline;}
+input, label, img{ margin:0; padding:0; vertical-align:middle; font:inherit;}
+label{ white-space:nowrap; padding-left:4px;}
+textarea{ resize:none;}
+ol, ul{ list-style:none;}
+table{ border-collapse:collapse; border-spacing:0;}
+blockquote:before, blockquote:after, q:before, q:after{ content:"";}
+blockquote, q{ quotes:"" "";}
+.clearfix:after{ display: block; content:"."; height:0; clear:both; visibility:hidden;}
+* html>body .clearfix{ display: inline-block; width:100%;}
+* html .clearfix{ height: 1%;}
+*+html .clearfix{ min-height:1%;}

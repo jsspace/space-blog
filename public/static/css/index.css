@@ -1,0 +1,20 @@
+body {
+    background: #611887;
+}
+.wrapper .img img {
+    width: 100%;
+    margin-top: 20px;
+}
+.wrapper .txt img {
+    width: 276px;
+    margin-top: 25px;
+}
+.wrapper .btn img {
+    width: 206px;
+    margin-top: 50px;
+}
+.wrapper .btn,
+.wrapper .txt {
+    display: none;
+    text-align: center;
+}

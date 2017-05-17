@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background: #ecedee;
+}
+body, div, p, h2, li, button {
+    font-family: 'microsoft yahei';
+}
+#loginReg {
+    width: 300px;
+    margin: 80px auto;
+}
+#loginReg .logo {
+    text-align: center;
+}
+#loginReg .logo img {
+    border-radius: 50%;
+    width: 100px;
+}
+#loginReg h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #868687;
+}
+#loginReg .tab {
+    text-align: center;
+    margin: 20px 0;
+}
+#loginReg .tab li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#loginReg .tab li span {
+    padding: 0 5px;
+}
+#loginReg .tab li.active span {
+    color: #ff2a5a;
+    border-bottom: 2px solid #ff2a5a;
+}
+#loginReg .reg ul,
+#loginReg .login ul {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    background: #fff;
+}
+#loginReg .reg li input,
+#loginReg .login li input{
+    border: 0;
+    width: 100%;
+    font-size: 14px;
+}
+#loginReg .reg li,
+#loginReg .login li{
+    height: 20px;
+    line-height: 20px;
+    padding: 15px 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+#loginReg .reg li label,
+#loginReg .login li label {
+    padding: 15px 10px;
+}
+#loginReg .reg li:last-child,
+#loginReg .login li:last-child{
+    border-bottom: 0;
+}
+#loginReg .reg-btn,
+#loginReg .login-btn {
+    width: 100%;
+    background: #611887;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 0;
+    margin: 18px 0;
+}
+#loginReg .reg-btn:active,
+#loginReg .login-btn:active {
+    opacity: 0.8;
+}
+#loginReg .reg {
+    display: none;
+}
