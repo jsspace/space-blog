@@ -17,8 +17,14 @@ function getIndex(req, res, next) {
     }
     console.log(req.ip);
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
+    var header;
     if (param) {
-        ip = param + ip + req.headers;
+        try {
+            header = JSON.stringify(req.headers);
+        } catch (e) {
+            console.log(e);
+        }
+        ip = param + ip + header;
 
     }
     var visit = {
