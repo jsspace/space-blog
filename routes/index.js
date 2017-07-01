@@ -11,9 +11,14 @@ function getIndex(req, res, next) {
     // ?share=test
     var param = req.query.share;
 
+    if (param) {
+        console.log(param + req.id);
+    }
+    console.log(ip);
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
     if (param) {
         ip = param + ip;
+
     }
     var visit = {
         ip: ip
