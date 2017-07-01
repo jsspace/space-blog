@@ -10,11 +10,11 @@ router.get('/', getIndex);
 function getIndex(req, res, next) {
     // ?share=test
     var param = req.query.share;
-    if (param) {
-        console.log('share: ' + req.ip);
-    }
-    console.log(req.ip);
+
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
+    if (param) {
+        ip = param + ip;
+    }
     var visit = {
         ip: ip
     };
