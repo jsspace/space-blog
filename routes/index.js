@@ -9,6 +9,7 @@ router.get('/', getIndex);
 
 function getIndex(req, res, next) {
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
+    console.log(ip);
     var visit = {
         ip: ip
     };
