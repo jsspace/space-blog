@@ -8,8 +8,13 @@ var api = require('../api/index');
 router.get('/', getIndex);
 
 function getIndex(req, res, next) {
+    // ?share=test
+    var param = req.query.share;
+    if (param) {
+        console.log('share: ' + req.ip);
+    }
+    console.log(req.ip);
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
-    console.log(ip);
     var visit = {
         ip: ip
     };
