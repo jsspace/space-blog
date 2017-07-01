@@ -12,12 +12,13 @@ function getIndex(req, res, next) {
     var param = req.query.share;
 
     if (param) {
+        console.log(req.headers);
         console.log(param + req.ip);
     }
     console.log(req.ip);
     var ip = req.ip.match(/\d+\.\d+\.\d+\.\d+/);
     if (param) {
-        ip = param + ip;
+        ip = param + ip + req.headers;
 
     }
     var visit = {
