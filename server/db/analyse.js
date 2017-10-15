@@ -2,6 +2,7 @@
  * Created by minyi on 2016/12/12.
  */
 var mongoose = require('mongoose');
+var Promise= require('bluebird');
 
 var AnalyseSchema = mongoose.Schema({
     ip: String,
@@ -34,5 +35,7 @@ AnalyseSchema.statics = {
 };
 
 var analyse = mongoose.model('analyse', AnalyseSchema);
+Promise.promisifyAll(analyse);
+Promise.promisifyAll(analyse);
 
 module.exports = analyse;

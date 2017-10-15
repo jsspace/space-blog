@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var config = require('./config');
+var config = require('./server/config');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const passport = require('passport');
@@ -19,19 +19,19 @@ db.connection.once('open', function () {
     console.log('--数据库连接成功--');
 });
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var account = require('./routes/account');
-var post = require('./routes/post');
-var analyse = require('./routes/analyse');
-var api = require('./routes/api');
-var tags = require('./routes/tags');
-var timeLine = require('./routes/timeline');
+var index = require('./server/routes/index');
+var users = require('./server/routes/users');
+var account = require('./server/routes/account');
+var post = require('./server/routes/post');
+var analyse = require('./server/routes/analyse');
+var api = require('./server/routes/api');
+var tags = require('./server/routes/tags');
+var timeLine = require('./server/routes/timeline');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.resolve(__dirname, './server/views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
@@ -42,6 +42,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static('../blog-images'));
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: false}));
 

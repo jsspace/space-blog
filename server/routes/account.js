@@ -2,10 +2,10 @@
  * Created by minyi on 2016/11/22.
  */
 var express = require('express');
-var post = require('../db/post');
+var post = require('../db/article');
 var router = express.Router();
 var isAuthenticated = require('../passport/index');
-var api = require('../api/index');
+var api = require('../../public/api/index');
 
 router.get('/login', function (req, res, next) {
     res.render('account/login');

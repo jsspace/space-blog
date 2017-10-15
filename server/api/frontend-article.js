@@ -1,39 +1,49 @@
 /**
  * Created by minyi on 2017/6/1.
  */
-var mongoose = require('../mongoose');
-var Article = mongoose.model('Article');
-var Like = mongoose.model('Like');
+var Article = require('./db/article.js');
 
 exports.getList = (req, res) => {
     var by = req.query.by,
-        id = req.query.id,
         key = req.query.key,
         limit = req.query.limit,
-        page = req.query.page;
-    page = parseInt(page, 10);
-    limit = parseInt(limit, 10);
+        page = req.query.page,
+        filter = {is_delete: 0},
+        sort = '-createdAt',
+        skip, reg;
 
-    if (!page) page = 1;
-    if (!limit) limit = 10;
-    var data = {
-            is_delete: 0
-        },
-        skip = (page - 1) * limit;
+    page = parseInt(page, 10) || 1;
+    limit = parseInt(limit, 10) || 10;
+    skip = (page - 1) * limit;
+
     if (key) {
-        var reg = new RegExp(key, 'i');
-        data.title = {$regex : reg};
+        reg = new RegExp(key, 'i');
+        filter.title = {$regex: reg};
     }
-    var sort = '-update_date';
     if (by) {
-        sort = '-' + by
+        sort = '-' + by;
     }
-    var fields = 'title abstract category tags visit like comment_count create_date update_date is_delete';
+
+    var fields = 'title url abstract tags visited like createdAt';
 
     Promise.all([
-        Article.find(data, fields).sort(sort).skip(skip).limit(limit).exec(),
-        Article.countAsync(data)
+        Article.find(filter, fields).sort(sort).skip(skip).limit(limit).exec(),
+        Article.count(filter)
     ]).then(([data, total]) => {
-        res.render();
+        var totalPage = Math.ceil(total / limit);
+        var hasMore = page * limit < total;
+        res.send({
+            data: data,
+            totalPage: totalPage,
+            hasMore: hasMore,
+            err_code: 0
+        });
     });
+};
+
+// 获取单篇文章
+exports.getItem = (req, res) => {
+    var articleName = req.param.name;
+
+
 };

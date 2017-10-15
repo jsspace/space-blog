@@ -1,9 +1,9 @@
 var express = require('express');
-var post = require('../db/post');
+var post = require('../db/article');
 var router = express.Router();
 var analyse = require('../db/analyse');
 var request = require('request');
-var api = require('../api/index');
+var api = require('../../public/api/index');
 /* GET home page. */
 router.get('/', getIndex);
 

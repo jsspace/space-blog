@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var Post = require('../db/post');
+var Post = require('../db/article');
 var __ = require('underscore');
 var _ = require('lodash');
 
