@@ -1,0 +1,412 @@
+.box-custom {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.header-custom {
+    margin: 0;
+    border-bottom: 1px solid #f4f4f4;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    text-align: left;
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    color: #444;
+}
+
+/**reset**/
+body, h1, h2, h3, h4, h5, h6, hr, p,
+dl, dt, dd, ul, ol, li,
+fieldset, button, input, textarea,
+th, td {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+h1 {
+    font-size: 18px; /* 18px / 12px = 1.5 */
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+fieldset, img {
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body, html {
+    background: #fff;
+    height: 100%;
+}
+
+input::-webkit-file-upload-button {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-new {
+    width: 1064px !important;
+    padding: 0 8px;
+    margin: 0 auto;
+    position: relative;
+    height: 72px;
+}
+
+/*header*/
+.header {
+    height: 60px;
+    width: 100%;
+    z-index: 3;
+    border-bottom: 1px solid #e1e1e1;
+    background: #fff;
+}
+
+.header-nav {
+    display: -webkit-flex;
+    display: flex;
+    height: 60px;
+}
+
+.header .logo {
+    display: inline-block;
+    float: left;
+    box-sizing: content-box;
+    flex: none;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.nav-tab {
+    margin-left: 30px;
+    -webkit-flex: 3;
+    flex: 3;
+}
+
+.nav-tab li {
+    float: right;
+    line-height: 60px;
+    margin: 0 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    animation: out .5s forwards;
+}
+
+.nav-tab li:hover, .nav-tab li.active {
+    animation: hover .5s forwards;
+}
+
+.user-info {
+    float: right;
+    position: relative;
+    flex: none;
+}
+
+.detail-info {
+    height: 60px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.detail-info img {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-top: 15px;
+    border-radius: 50%;
+}
+
+.application-list {
+    width: 180px;
+    padding: 15px 0;
+    border: 1px solid #dfddde;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 8px rgba(12, 3, 7, .35);
+    -moz-box-shadow: 0 2px 8px rgba(12, 3, 7, .35);
+    box-shadow: 0 2px 8px rgba(12, 3, 7, .35);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+}
+
+.application-list li {
+    color: #002030;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.application-list li a {
+    display: block;
+    color: #333;
+    padding-left: 16px;
+}
+
+.application-list li a:hover {
+    background: #c2dafe;
+    color: #002030;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.application-list li a:hover .log-out {
+    background: #c2dafe;
+    color: #002030;
+}
+
+@keyframes out {
+    from {
+    }
+    to {
+    }
+}
+
+@-webkit-keyframes out {
+    from {
+    }
+    to {
+    }
+}
+
+@keyframes hover {
+    from {
+    }
+    to {
+        color: #009aff;
+    }
+}
+
+@-webkit-keyframes hover {
+    from {
+    }
+    to {
+        color: #009aff;
+    }
+}
+
+.nav-tab li > a {
+    display: inline-block;
+    height: 100%;
+    color: inherit;
+    padding: 0 6px;
+    text-decoration: none;
+
+}
+
+a:-webkit-any-link,
+a:visited,
+a:focus {
+    text-decoration: none;
+}
+
+.nav-tab li {
+    position: relative;
+}
+
+.nav-tab li.active::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #3583fb;
+    border-radius: 2px;
+    top: 56px;
+    position: absolute;
+}
+
+/* app select header */
+.app-header {
+    width: 100%;
+    height: 72px;
+    line-height: 72px;
+    background: #f7f9fa;
+    position: relative;
+}
+
+.app-detail-header button {
+    color: #333;
+    font-size: 26px;
+    float: left;
+    margin-left: 10px;
+    line-height: 72px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.app-detail-header .select-btn:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    margin-top: 4px;
+    vertical-align: middle;
+    border: 6px solid transparent;
+    border-top: 6px solid #333;
+}
+
+.app-detail-header .select-btn-active:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    margin-top: -4px;
+    vertical-align: middle;
+    border: 6px solid transparent;
+    border-bottom: 6px solid #333;
+}
+
+.analytics-content {
+    width: 1064px !important;
+    padding: 0 18px;
+    margin: 0 auto;
+}
+
+/* map */
+.map-title-bar {
+    margin-top: 33px;
+    overflow: hidden;
+}
+
+.map-title {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 44px;
+    font-weight: 600;
+}
+
+.date-picker button {
+    background-color: #f7f9fa;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+}
+
+/* change-btn */
+.exchange-header {
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+}
+
+.btn-groups {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.btn-groups button  {
+    padding: 0 12px;
+    line-height: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #88979e;
+}
+
+.btn-groups button.active {
+    color: #428bfb;
+}
+
+/* checker */
+.checker .home-title {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.checker h1 {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+.checker h2 {
+    font-size: 20px;
+    margin-top: 35px;
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+.checker h3 {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.checker p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.checker pre {
+    background-color: #eaf2ff;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.checker .checkbox {
+    text-align: center;
+}
+.checker .check-btn {
+    width: 100px;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #3583fb;
+    color: #3583fb;
+    margin: 36px auto;
+    outline: none;
+}

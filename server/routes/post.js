@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var post = require('../db/post');
+var post = require('../db/article');
 var marked = require('marked');
 marked.setOptions({
     renderer: new marked.Renderer(),
